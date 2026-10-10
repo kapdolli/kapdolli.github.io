@@ -8,7 +8,8 @@
 # 저장소 이름은 <아이디>.github.io 여야 한다. 그래야 주소가
 # https://<아이디>.github.io/ 로 짧게 나온다 (하위 폴더가 안 붙는다).
 
-$ErrorActionPreference = "Stop"
+# git·gh 는 보통 메시지도 stderr 로 뱉는다. Stop 이면 경고 한 줄에 멈춘다.
+$ErrorActionPreference = "Continue"
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 # ── 로그인 확인
