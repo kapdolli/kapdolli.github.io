@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>shorts-upload</title>
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e3e3e3; --link:#1a56db;
+  }
+  :root:not([data-theme="light"]) { }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#15171a; --fg:#e8e8e8; --muted:#a0a4ab; --line:#2c2f34; --link:#7aa7ff;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#15171a; --fg:#e8e8e8; --muted:#a0a4ab; --line:#2c2f34; --link:#7aa7ff;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:56px 16px 72px}
+  h1{font-size:28px; margin:0 0 6px; letter-spacing:-.01em}
+  .sub{color:var(--muted); margin:0 0 40px}
+  h2{font-size:18px; margin:40px 0 10px; padding-top:24px; border-top:1px solid var(--line)}
+  ul{padding-left:20px} li{margin:6px 0}
+  code{background:rgba(127,127,127,.14); padding:1px 5px; border-radius:4px; font-size:.9em}
+  a{color:var(--link)}
+  footer{margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:14px}
+  footer a{margin-right:16px}
+  .en{color:var(--muted); font-size:14px; margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>shorts-upload</h1>
+  <p class="sub">운영자 본인의 유튜브 채널에 숏폼 영상을 올리는 개인용 도구</p>
+
+  <h2>무엇을 하는 프로그램인가</h2>
+  <p>
+    운영자가 직접 만든 세로형 짧은 영상(쇼츠)을 운영자 본인 소유의 유튜브
+    채널에 올립니다. 운영자의 개인 PC에서만 돌아가며, 일반에 배포하거나
+    다른 사람이 가입해 쓰는 서비스가 아닙니다.
+  </p>
+  <p class="en">
+    A personal command-line tool that uploads short-form videos, produced by the
+    operator, to the operator's own YouTube channels. It runs only on the
+    operator's own computer. It is not distributed, and no other person can sign
+    in to it.
+  </p>
+
+  <h2>하는 일</h2>
+  <ul>
+    <li>완성된 영상 파일과 제목·설명·태그를 유튜브에 업로드합니다 (처음에는 비공개)</li>
+    <li>업로드한 영상의 공개 상태를 확인합니다</li>
+    <li>영상에 운영자 본인 이름으로 댓글을 답니다</li>
+    <li>어느 채널에 올렸는지를 운영자의 PC에 기록합니다</li>
+  </ul>
+
+  <h2>쓰는 권한</h2>
+  <ul>
+    <li><code>youtube.upload</code> — 영상을 올리기 위해</li>
+    <li><code>youtube.readonly</code> — 올린 영상의 공개 상태와 채널을 확인하기 위해</li>
+    <li><code>youtube.force-ssl</code> — 영상에 댓글을 달기 위해</li>
+  </ul>
+  <p>
+    세 권한 모두 <strong>운영자 본인 계정의 채널</strong>에만 씁니다.
+    다른 사람의 채널이나 데이터에는 접근하지 않습니다.
+  </p>
+
+  <h2>데이터를 어떻게 다루나</h2>
+  <p>
+    구글 계정 정보를 외부로 보내지 않습니다. 로그인으로 받은 갱신 토큰은
+    운영자 PC의 사용자 폴더에만 저장되며, 서버에 올리거나 제3자에게 제공하지
+    않습니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>에
+    적었습니다.
+  </p>
+
+  <h2>문의</h2>
+  <p>elfkapjam2@gmail.com</p>
+
+  <footer>
+    <a href="privacy.html">개인정보처리방침 / Privacy Policy</a>
+    <a href="terms.html">이용약관 / Terms of Service</a>
+  </footer>
+
+</div>
+</body>
+</html>

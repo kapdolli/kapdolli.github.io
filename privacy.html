@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보처리방침 — shorts-upload</title>
+<style>
+  :root{ --bg:#ffffff; --fg:#1a1a1a; --muted:#5a5a5a; --line:#e3e3e3; --link:#1a56db; }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#15171a; --fg:#e8e8e8; --muted:#a0a4ab; --line:#2c2f34; --link:#7aa7ff;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#15171a; --fg:#e8e8e8; --muted:#a0a4ab; --line:#2c2f34; --link:#7aa7ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--fg);
+       font:16px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;}
+  .wrap{max-width:720px; margin:0 auto; padding:56px 16px 72px}
+  h1{font-size:26px; margin:0 0 4px}
+  .date{color:var(--muted); margin:0 0 40px; font-size:14px}
+  h2{font-size:17px; margin:36px 0 8px; padding-top:22px; border-top:1px solid var(--line)}
+  ul{padding-left:20px} li{margin:6px 0}
+  code{background:rgba(127,127,127,.14); padding:1px 5px; border-radius:4px; font-size:.9em}
+  a{color:var(--link)}
+  .en{color:var(--muted); font-size:14px}
+  footer{margin-top:52px; padding-top:20px; border-top:1px solid var(--line); font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>개인정보처리방침</h1>
+  <p class="date">shorts-upload · 시행일 2026년 10월 10일</p>
+
+  <p>
+    shorts-upload(이하 "이 도구")는 운영자가 자신의 유튜브 채널에 영상을
+    올리기 위해 직접 만들어 자신의 PC에서만 실행하는 개인용 프로그램입니다.
+    이 도구는 운영자 외의 사용자를 받지 않으며, 회원가입이나 외부 제공이
+    없습니다. 이 방침은 이 도구가 구글 사용자 데이터를 어떻게 다루는지
+    설명합니다.
+  </p>
+
+  <h2>1. 접근하는 구글 사용자 데이터</h2>
+  <p>이 도구는 운영자가 로그인한 구글 계정에 대해 아래 범위만 요청합니다.</p>
+  <ul>
+    <li><code>youtube.upload</code> — 운영자의 채널에 영상 파일과 제목·설명·태그를 업로드</li>
+    <li><code>youtube.readonly</code> — 업로드한 영상의 공개 상태와 채널 이름·ID 조회</li>
+    <li><code>youtube.force-ssl</code> — 업로드한 영상에 운영자 명의로 댓글 작성</li>
+  </ul>
+  <p>
+    위 범위는 모두 <strong>운영자 본인 소유 채널</strong>에만 사용합니다.
+    다른 이용자의 채널, 구독자 목록, 시청 기록, 이메일 본문 등 다른 구글
+    서비스의 데이터에는 접근하지 않습니다.
+  </p>
+
+  <h2>2. 저장하는 것과 저장 위치</h2>
+  <ul>
+    <li>
+      <strong>갱신 토큰</strong> — 운영자 PC의 사용자 폴더
+      (<code>%USERPROFILE%\.volcano\keys\youtube\</code>) 안에 파일로만 저장합니다.
+      채널마다 한 개씩이며, 다음 업로드 때 다시 로그인하지 않기 위한 용도입니다.
+    </li>
+    <li>
+      <strong>업로드 이력</strong> — 운영자 PC의 로컬 데이터베이스 파일에
+      영상 제목, 영상 ID, 채널, 올린 날짜, 공개 상태를 기록합니다. 하루
+      업로드 편수를 세고 같은 영상을 두 번 올리지 않기 위한 용도입니다.
+    </li>
+  </ul>
+  <p>
+    구글 계정의 비밀번호는 다루지 않습니다. 로그인은 구글이 제공하는
+    OAuth 2.0 화면에서만 이루어지며, 이 도구는 그 결과로 받은 토큰만 받습니다.
+  </p>
+
+  <h2>3. 외부 전송과 제3자 제공</h2>
+  <p>
+    이 도구는 구글 사용자 데이터를 운영자의 PC 밖으로 보내지 않습니다.
+    유일한 통신 상대는 <strong>구글 API 서버</strong>(영상 업로드·조회·댓글)이며,
+    별도의 서버를 두지 않습니다. 어떠한 제3자에게도 판매·대여·공유하지
+    않습니다. 광고나 분석 목적으로 사용하지 않으며, 인공지능 모델의 학습에
+    사용하거나 사용하도록 제공하지 않습니다.
+  </p>
+
+  <h2>4. 보관 기간과 삭제</h2>
+  <p>
+    토큰과 이력은 운영자가 지울 때까지 PC에 남습니다. 토큰 파일을 지우면
+    이 도구는 해당 채널에 더 이상 접근할 수 없습니다. 접근 권한은 구글 계정의
+    <a href="https://myaccount.google.com/permissions">보안 &gt; 서드파티 앱</a>
+    에서 언제든지 철회할 수 있으며, 철회하면 남아 있는 토큰도 즉시 무효가
+    됩니다.
+  </p>
+
+  <h2>5. 다루지 않는 것</h2>
+  <ul>
+    <li>운영자 외 다른 사람의 개인정보를 수집하지 않습니다</li>
+    <li>쿠키나 웹 추적 기술을 쓰지 않습니다 (이 웹페이지 포함)</li>
+    <li>만 14세 미만 아동의 정보를 의도적으로 수집하지 않습니다</li>
+  </ul>
+
+  <h2>6. 구글 API 서비스 사용자 데이터 정책</h2>
+  <p>
+    이 도구가 구글 API로부터 받은 정보를 사용하고 다른 앱으로 전송하는 것은
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">
+    구글 API 서비스 사용자 데이터 정책</a>(제한적 사용 요건 포함)을 따릅니다.
+  </p>
+  <p class="en">
+    shorts-upload's use and transfer of information received from Google APIs
+    adheres to the Google API Services User Data Policy, including the Limited
+    Use requirements.
+  </p>
+
+  <h2>7. 변경과 문의</h2>
+  <p>
+    이 방침이 바뀌면 이 페이지의 시행일을 고쳐 적습니다.<br>
+    문의: elfkapjam2@gmail.com
+  </p>
+
+  <footer><a href="index.html">← shorts-upload</a></footer>
+
+</div>
+</body>
+</html>
